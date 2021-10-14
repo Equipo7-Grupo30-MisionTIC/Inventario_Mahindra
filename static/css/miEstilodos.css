@@ -1,0 +1,269 @@
+body{
+    font-family: 'Times New Roman', Times, serif;
+    margin: 20px;
+}
+
+.header{
+    background: lightgray;
+    color:black;
+    padding: 0 5%;
+    width: 100%;
+    position: fixed;
+    top:0;
+    left: 0;
+    bottom: 3;
+    display: flex;
+
+}
+
+.container1{
+    min-width: 10%;
+    height: auto;
+    float: left;
+    margin-left:5px;
+    margin-top: 10px;
+}
+
+.container1 img{
+    min-width: 50px;
+    width: 50px;
+    height: auto;
+    float: left;
+}
+.container2{
+    width: 65%;
+    height: auto;
+    float: left;
+    margin-left:5px;
+    margin-top: 0px;
+}
+.container2 p{
+    font-weight: bold;
+    text-align: center;
+    font-size: 120%;
+}
+
+.container3{
+    min-width: 5%;
+    width: 5%;
+    float:left;
+    margin-left:5px;
+    margin-top: 5px;
+}
+.container3 img{
+    min-width: 50px;
+    width: 50px;
+    margin: auto;
+    display: block;
+    margin-bottom:5px;
+}
+
+.container4{
+    min-width:1%;
+    height: 20%;
+    width: 1%;
+    float:left;
+    margin-left:5px;
+    margin-top: 5px;
+
+}
+
+.btn{
+    width: 60px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin-top:10px
+
+}
+
+.box {
+    margin-top: 80px;
+    min-height: 150px;
+    height: 850px;
+    width: auto;
+  }
+
+  .ppal{
+    border: 2px solid black;
+    margin-top: 10px;
+    margin-left: 210px;
+    margin-right: 210px;
+    min-height: 90px;
+    height: 170px;
+    width: auto;
+ }
+
+ .ppal2{
+    border: 2px solid black;
+    margin-top: 10px;
+    margin-left: 210px;
+    margin-right: 210px;
+    min-height: 90px;
+    height: 400px;
+    width: auto;
+
+ }
+
+ .ppal3{
+    border: 2px solid black;
+    margin-top: 30px;
+    margin-left: 210px;
+    margin-right: 210px;
+    min-height: 90px;
+    height: 90px;
+    width: auto;
+    position: relative;
+ }
+ .ppal3 img{
+    min-width: 120px;
+    width: 120px;
+    height: auto;
+    position: absolute;
+    left: 700px;
+    right:    1000px;
+    bottom:   25px;
+}
+
+
+ .ppal .titulo{
+     font-weight: bold;
+     margin-left: 10px;
+     margin-right: 10px;
+     margin-top: 5px;
+ }
+
+ .ppal2 .titulo{
+    font-weight: bold;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+ .fila {
+     height: 35px;
+     margin-top: 30px;
+ }
+
+
+ .c3{ 
+     width: 210px;
+     display: inline;
+     float: left;
+     overflow-x: hidden;
+     margin-left: 85px;
+     margin-right: 5px;
+     margin-top: 0px;
+     margin-bottom: 0px;
+     padding-top: 0px;
+     padding-bottom: 0px;
+     text-align: left;
+     font-family: sans-serif;
+     font-size: small;
+ }
+
+#cbx{
+    width: 20%;
+    margin-left: 5px;
+    margin-right: 5px;
+    position: absolute;
+    left: 300px;
+    right:    1000px;
+    bottom:   30px;
+}
+
+#cbl{
+    width: 20%;
+    margin-left: 5px;
+    margin-right: 5px;
+    position: absolute;
+    right:    550px;
+    bottom:   30px;
+}
+
+ .c8{
+    width: 30%;
+    display: inline;
+    float: left;
+    overflow-x: hidden;
+ }
+ .c3 label{
+     font-weight: bold;
+     margin-right: 20px;
+ }
+ .c4{
+     width: 40%;
+     display: inline;
+     float: left;
+     overflow-x: hidden;
+ }
+ .c7{
+     width: 60%;
+     display: inline;
+     float: left;
+     margin-left: 2px;
+     margin-right: 2px;
+     margin-top: 0px;
+     margin-bottom: 0px;
+     padding-top: 0px;
+     padding-bottom: 0px;
+     text-align: center;
+ }
+
+ input[type=text], input[type=password]{
+     width: 100%;
+ }
+
+ #usrtxt {
+     text-transform: uppercase;
+ }
+
+ .boton{
+    height: 35px;
+    margin-top: 30px;
+    position: relative;  
+ }
+ .botones{
+    height: 35px;
+    margin-top: 30px;
+    position: relative;
+ }
+
+ #editarbutton{
+    position: absolute;
+    right:    1000px;
+    bottom:   0;
+    width: 300px;
+ }
+
+ #eliminarbutton{
+    position: absolute;
+    right: 280px;
+    bottom:   0;
+    width: 300px;
+ }
+ 
+ #buscarbutton{
+    position: absolute;
+    right: 600px;
+    bottom:   10px;
+    width: 300px;
+ }
+
+ input[type=button]{
+     border-color:black;
+     border-width: 1px;
+     border-radius: 4px;
+     color: black;
+     font-weight: bold;
+     cursor: pointer;
+     font-size: 14;
+     height: 40px;
+     text-align: center !important;
+     background: lightgray;
+ }
+ input[type=button]:hover{
+     background: lightblue;
+ }
