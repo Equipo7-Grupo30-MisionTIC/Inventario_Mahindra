@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/miEstilo.css') }}"/>
+    <title>Crear usuario - Inventario Mahindra Mahindra</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container1">
+            <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="">
+        </div>
+        <div class="container2">
+            <p class="textocentral">Usuario X - Mahindra Mahindra</p>
+        </div>
+        <div class="container3">
+            <img src="{{ url_for('static', filename='assets/avatar.png') }}" alt="">
+        </div>
+        <div class="container4"></div>
+        <input class="btn" type="button" value="Salir" style='width:120px; height:40px' onclick="location.href='/usuarios/';"/>
+        </div>
+        </div>
+    </header>
+    <form name="frmeg" id="frmeg" method="POST" action="/crearusuario/">
+        <div class="box">
+            <div class="ppal">
+                <label class=titulo>Registrar nuevo usuario</label>
+                <div class="fila">
+                    <div class="c3"><label>Nombre</label></div>
+                    <div class="c7"><input type="text" id="usrtext" name="nomtxt" required/></div>
+                </div>
+                <div class="fila">
+                    <div class="c3"><label>Número de documento</label></div>
+                    <div class="c7"><input type="text" id="pwdtext" name="numdoctxt" required/></div>
+                </div>
+                <div class="fila">
+                    <div class="c3"><label>Télefono</label></div>
+                    <div class="c7"><input type="text" id="nuetext" name="telftxt"/></div>
+                </div>
+                <div class="fila">
+                    <div class="c3"><label>Código de usuario</label></div>
+                    <div class="c7"><input type="text" id="vertext" name="codusrtxt" required/></div>
+                </div>
+                <div><label>&nbsp;</label></div>
+                <div><label>&nbsp;</label></div>
+                <div class="c3"><label>Rol</label></div>
+                <div class="c7">
+                    <select class="c7">
+                      <option value="0">Select:</option>
+                      <option value="1">Empleado</option>
+                      <option value="2">Administrador</option>
+                    </select>
+                  </div>
+            </div>
+            <div class="ppal2">
+                <label class=titulo>Cifrar contraseña</label>
+                <div class="fila">
+                    <div class="c3"><label>Contraseña a asignar</label></div>
+                    <div class="c7"><input type="password" id="asignclave" name="psstxt" required/></div>
+                </div>
+            </div>
+            <div class="ppal3">
+                <div class="fila">
+                    <div class="c9" id="cbx"><input type="checkbox" id="checkb" name="chk" /></div>
+                    <div class="c10" id="cbl"><label>CheckBox</label></div>
+                    <img src="{{ url_for('static', filename='assets/catcha.png') }}" alt="">
+                </div>
+            </div>
+            <div class="botones">
+                <div class="c4"><label>&nbsp;</label></div>
+                <div class="c8"><input type="button" value="Crear" title="Click para crear usuario" id="crearbutton"/></div>
+                <div class="c8"><input type="button" value="Deshacer" title="Click para deshacer" id="deshacerbutton"></div>
+            </div>
+    </form>
+    <footer class="footer">
+        <div class="contatiner">
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/estiloUsuario.css') }}" />
+    <title>Usuarios - Inventario Mahindra Mahindra</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container1">
+            <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="">
+        </div>
+        <div class="container2">
+            <p class="textocentral">Usuario X - Mahindra Mahindra</p>
+        </div>
+        <div class="container3">
+            <img src="{{ url_for('static', filename='assets/avatar.png') }}" alt="">
+        </div>
+        <div class="container4"></div>
+        <input class="btn" type="button" value="Salir" style='width:120px; height:40px' onclick="location.href='/principal/';"/>
+        </div>
+        </div>
+    </header>
+    <div class="wrapper">
+        <div class="box">
+            <div class="ppal">
+                <label class=titulo>Buscar</label>
+                <div class="fila">
+                    <div class="c12"><label>Número de documento</label></div>
+                    <div class="c14"><input type="text" id="numdocbus"/></div>
+                </div>
+                <div class="fila">
+                    <div class="c12"><label>Código de usuario</label></div>
+                    <div class="c14"><input type="text" id="codusu" /></div>
+                </div>
+            </div>
+            <div class="boton">
+                <div class="c4"><label>&nbsp;</label></div>
+                <div class="c8"><input type="button" value="Buscar" title="Click para buscar" id="buscarbutton" onclick="" /></div>
+            </div>
+            <div class="ppal2">
+                <label class="titulo">Datos del usuario</label>
+                <div class="c10"><label class="refe">IMAGEN DE REFERENCIA</label></div>
+                <div class="fila">
+                    <div class="c3"><label>Nombre</label></div>
+                    <div class="c7"><p>---------------------------------------------------------------------------------------------------</p></div>
+                </div>
+                <div class="fila">
+                    <div class="c3"><label>Número de documento</label></div>
+                    <div class="c7"><p>---------------------------------------------------------------------------------------------------</p></div>
+                </div>
+                <div class="fila">
+                    <div class="c3"><label>Télefono</label></div>
+                    <div class="c7"><p>---------------------------------------------------------------------------------------------------</p></div>
+                </div>
+                <div class="fila">
+                    <div class="c3"><label>Código de usuario</label></div>
+                    <div class="c7"><p>---------------------------------------------------------------------------------------------------</p></div>
+                </div>
+                <div class="fila">
+                    <div class="c3"><label>Rol</label></div>
+                    <div class="c7"><p>---------------------------------------------------------------------------------------------------</p></div>
+                </div>
+            </div>
+            <div class="botones">
+                <div class="c4"><label>&nbsp;</label></div>
+                <div class="c8"><input type="button" value="Crear nuevo usuario" title="Click para crear nuevo usuario" id="crearbutton" onclick="location.href='/crearusuario/';" /></div>
+                <div class="c8"><input type="button" value="Modificar usuario" title="Click para modificar el actual" id="modificarbutton" onclick="location.href='/modificarusuario/';" /></div>
+            </div>
+    </div>
+
+    <footer class="footer">
+        <div class="contatiner">
+   
+        </div>
+    </footer>
+</body>
+</html>

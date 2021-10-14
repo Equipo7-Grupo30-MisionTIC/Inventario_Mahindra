@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/miEstilodos.css') }}"/>
+    <title>Modificar usuario - Inventario Mahindra Mahindra</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container1">
+            <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="">
+        </div>
+        <div class="container2">
+            <p class="textocentral">Usuario X - Mahindra Mahindra</p>
+        </div>
+        <div class="container3">
+            <img src="{{ url_for('static', filename='assets/avatar.png') }}" alt="">
+        </div>
+        <div class="container4"></div>
+        <input class="btn" type="button" value="Salir" style='width:120px; height:40px' onclick="location.href='/usuarios/';"/>
+        </div>
+        </div>
+    </header>
+    <div class="wrapper">
+        <div class="box">
+            <div class="ppal">
+                <label class=titulo>Busqueda</label>
+                <div class="fila">
+                    <div class="c3"><label>Número de documento</label></div>
+                    <div class="c7"><input type="text" id="numdocbus"/></div>
+                </div>
+                <div class="fila">
+                    <div class="c3"><label>Código de usuario</label></div>
+                    <div class="c7"><input type="text" id="codusu" /></div>
+                </div>
+            </div>
+            <div class="boton">
+                <div class="c4"><label>&nbsp;</label></div>
+                <div class="c8"><input type="button" value="Buscar" title="Click para buscar" id="buscarbutton" onclick=cambiarContraseña() /></div>
+            </div>
+            <div class="ppal2">
+                <label class=titulo>Datos</label>
+                <div class="fila">
+                    <div class="c3"><label>Nombre</label></div>
+                    <div class="c7"><input type="text" id="nametxt"name="nomtxt" required/></div>
+                </div>
+                <div class="fila">
+                    <div class="c3"><label>Número de documento</label></div>
+                    <div class="c7"><input type="text" id="numdoced" name="numdoctxt" required /></div>
+                </div>
+                <div class="fila">
+                    <div class="c3"><label>Télefono</label></div>
+                    <div class="c7"><input type="text" id="teletxt" name="teltxt" required /></div>
+                </div>
+                <div class="fila">
+                    <div class="c3"><label>Código de usuario</label></div>
+                    <div class="c7"><input type="text" id="codusu"  name="codtxt" required/></div>
+                </div>
+                <div><label>&nbsp;</label></div>
+                <div><label>&nbsp;</label></div>
+                <div class="c3"><label>Rol</label></div>
+                <div class="c7">
+                    <select class="c7">
+                      <option value="0">Select:</option>
+                      <option value="1">Empleado</option>
+                      <option value="2">Administrador</option>
+                    </select>
+                  </div>
+            </div>
+            <div class="ppal3">
+                <div class="fila">
+                    <div class="c9" id="cbx"><input type="checkbox" id="checkb" /></div>
+                    <div class="c10" id="cbl"><label>CheckBox</label></div>
+                    <img src="{{ url_for('static', filename='assets/catcha.png') }}" alt="">
+                </div>
+            </div>
+            <div class="botones">
+                <div class="c4"><label>&nbsp;</label></div>
+                <div class="c8"><input type="button" value="Editar" title="Click para editar" id="editarbutton" onclick="window.confirm('¿Seguro desea editar este registro?')" /></div>
+                <div class="c8"><input type="button" value="Eliminar" title="Click para eliminar" id="eliminarbutton" onclick="window.confirm('¿Seguro desea eliminar este registro?')" /></div>
+            </div>
+    </div>
+
+    <footer class="footer">
+        <div class="contatiner">
+   
+        </div>
+    </footer>
+</body>
+</html>
