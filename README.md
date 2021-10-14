@@ -1,1 +1,1 @@
-# Inventario_Mahindra_Sprint_MisionTIC_Ciclo3
+# Inventario_Mahindra_Sprint_MisionTIC_Ciclo3_Equipo7_Grupo30
