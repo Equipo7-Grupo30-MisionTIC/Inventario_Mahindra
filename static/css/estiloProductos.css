@@ -356,14 +356,7 @@ body{
 
  #modificarbutton{
     position: absolute;
-    right:    1000px;
-    bottom:   0;
-    width: 300px;
- }
-
- #adquiridobutton{
-    position: absolute;
-    right: 280px;
+    right:    650px;
     bottom:   0;
     width: 300px;
  }
