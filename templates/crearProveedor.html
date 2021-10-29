@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/estiloCrproveedor.css') }}"/>
+    <title>Crear proveedor - Inventario Mahindra Mahindra</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container1">
+            <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="">
+        </div>
+        <div class="container2">
+            {% if titulo %}
+            <p class="textocentral">{{ titulo }} - Mahindra Mahindra</p>
+            {% else %}
+            <p class="textocentral">Mahindra Mahindra</p>
+            {% endif %}
+        </div>
+        <div class="container3">
+            {% if titulo %}
+            <img src="{{ url_for('static', filename='assets/avatar.png') }}" alt="" title="{{ titulo }}">
+            {% else %}
+            <img src="{{ url_for('static', filename='assets/avatar.png') }}" alt="" title="Mr">
+            {% endif %}
+        </div>
+        <div class="container4"></div>
+        <input class="btn" type="button" value="Salir" style='width:120px; height:40px' onclick="location.href='/proveedores/';"/>
+        </div>
+        </div>
+    </header>
+    <form name="frmeg" id="frmeg" method="POST" action="/crearproveedor/">
+        <div class="box">
+            <div class="ppal">
+                <label class=titulo>Datos</label>
+                <div class="fila">
+                    <div class="c3"><label> {{ form.codprod.label }}</label></div>
+                    <div class="c7">{{ form.codprod()}}</div>
+                </div>
+                <div class="fila">
+                    <div class="c3"><label>&nbsp;</label></div>
+                    <div class="c7"><label style="font-size:small; text-align: center;">Para asociar un producto a mas de un proveedor, coloque el codigo del mismo y a continuación la información que se usara tambien para registrar al proveedor</label></div>
+                </div>
+                <div class="fila">
+                    <div class="c3"><label>{{ form.nom.label }}</label></div>
+                    <div class="c7">{{ form.nom()}}</div>
+                </div>
+                <div class="fila">
+                    <div class="c3"><label>{{ form.codprov.label }}</label></div>
+                    <div class="c7">{{ form.codprov()}}</div>
+                </div>
+                <div class="fila">
+                    <div class="c3"><label>{{ form.direcc.label }}</label></div>
+                    <div class="c7">{{ form.direcc()}}</textarea></div>
+                </div>
+                <label>&nbsp;</label>
+                <label>&nbsp;</label>
+                <label>&nbsp;</label>
+                <div class="fila">
+                    <div class="c3"><label>{{ form.nit.label }}</label></div>
+                    <div class="c7">{{ form.nit()}}</div>
+                    <label>&nbsp;</label>
+                    <label>&nbsp;</label>
+                    <label>&nbsp;</label>
+                </div>
+                <label>&nbsp;</label>
+                <label>&nbsp;</label>
+                <label>&nbsp;</label>
+                <div class="fila">
+                    <div class="c3"><label>{{ form.descr.label }}</label></div>
+                    <div class="c7">{{ form.descr(cols="90",rows="10")}}</textarea></div>
+                </div>
+                <div><label>&nbsp;</label></div>
+                <div class="fila">
+                    <div class="c3"><label>{{ form.telf.label }}</label></div>
+                    <div class="c7">{{ form.telf()}}</div>
+                </div>
+                <div><label>&nbsp;</label></div>
+                <div class="fila">
+                    <div class="c3"><label>{{ form.prscon.label }}</label></div>
+                    <div class="c7">{{ form.prscon()}}</div>
+                </div>
+                <div class="fila">
+                    <div class="c3"><label> {{ form.estd.label }}</label></div>
+                    <div class="c7">{{ form.estd()}}</div>
+                </div>
+            </div>
+            <div class="botones">
+                <div class="c4"><label>&nbsp;</label></div>
+                <div class="c8">{{ form.btncrprov()}}</div>
+            </div>
+    </form>
+    <footer class="footer">
+        <div class="contatiner">
+        </div>
+    </footer>
+</body>
+</html>

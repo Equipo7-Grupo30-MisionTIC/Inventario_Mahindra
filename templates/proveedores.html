@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/estiloProveedor.css') }}" />
+    <title>Proveedores - Inventario Mahindra Mahindra</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container1">
+            <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="">
+        </div>
+        <div class="container2">
+            {% if titulo %}
+            <p class="textocentral">{{ titulo }} - Mahindra Mahindra</p>
+            {% else %}
+            <p class="textocentral">Mahindra Mahindra</p>
+            {% endif %}
+        </div>
+        <div class="container3">
+            {% if titulo %}
+            <img src="{{ url_for('static', filename='assets/avatar.png') }}" alt="" title="{{ titulo }}">
+            {% else %}
+            <img src="{{ url_for('static', filename='assets/avatar.png') }}" alt="" title="Mr">
+            {% endif %}
+        </div>
+        <div class="container4"></div>
+        <input class="btn" type="button" value="Salir" style='width:120px; height:40px' onclick="location.href='/principal/';"/>
+        </div>
+        </div>
+    </header>
+    <header class="header2">
+        <nav class="navigation">
+            <ul>
+             <li><a class="option" href="/proveedores/">Principal</a></li> 
+             <li><a>&nbsp;</a></li>
+             <li><a>&nbsp;</a></li>
+             <li><a>&nbsp;</a></li>
+             <li><a class="option" href="/crearproveedor/">Crear</a></li> 
+             <li><a>&nbsp;</a></li>
+             <li><a>&nbsp;</a></li>
+             <li><a>&nbsp;</a></li>
+            </ul>
+        </nav>
+    </header>
+    <form name="frprov" id="frprov" method="POST" action="/proveedores/">
+        <div class="box">
+            <div class="ppal">
+                <label class=titulo>Buscar</label>
+                <div class="fila">
+                    <div class="c12"><label>{{ form.codprov.label }}</label></div>
+                    <div class="c14">{{ form.codprov()}}</div>
+                </div>
+            </div>
+            <div class="boton">
+                <div class="c4"><label>&nbsp;</label></div>
+                <div class="c8">{{ form.btnprov()}}</div>
+            </div>
+    </form>
+            <div class="ppal2">
+                <label class="titulo">Datos del proveedor</label>
+                <div class="fila">
+                    <div class="c3"><label>Codigo del proveedor</label></div>
+                    {% if codprov %}
+                    <div class="c7"><p>{{ codprov }}</p></div>
+                    {% else %}
+                    <div class="c7"><p>--------------------------------------------------------------------------------------------------------</p></div>
+                    {% endif %}
+                </div>
+                <div class="fila">
+                    <div class="c3"><label>Nombre del proveedor</label></div>
+                    {% if nom %}
+                    <div class="c7"><p>{{ nom }}</p></div>
+                    {% else %}
+                    <div class="c7"><p>--------------------------------------------------------------------------------------------------------</p></div>
+                    {% endif %}
+                </div>
+                <div class="fila">
+                    <div class="c3"><label>NIT</label></div>
+                    {% if nit %}
+                    <div class="c7"><p>{{ nit }}</p></div>
+                    {% else %}
+                    <div class="c7"><p>--------------------------------------------------------------------------------------------------------</p></div>
+                    {% endif %}
+                </div>
+                <div class="fila">
+                    <div class="c3"><label>Descripcion</label></div>
+                    {% if descr %}
+                    <div class="c7"><p>{{ descr }}</p></div>
+                    {% else %}
+                    <div class="c7"><p>--------------------------------------------------------------------------------------------------------</p></div>
+                    {% endif %}
+                </div>
+                <div class="fila">
+                    <div class="c3"><label>Direccion</label></div>
+                    {% if direcc %}
+                    <div class="c7"><p>{{ direcc }}</p></div>
+                    {% else %}
+                    <div class="c7"><p>--------------------------------------------------------------------------------------------------------</p></div>
+                    {% endif %}
+                </div>
+                <div class="fila">
+                    <div class="c3"><label>Nombre de contacto</label></div>
+                    {% if nomcontact %}
+                    <div class="c7"><p>{{ nomcontact }}</p></div>
+                    {% else %}
+                    <div class="c7"><p>--------------------------------------------------------------------------------------------------------</p></div>
+                    {% endif %}
+                </div>
+                <div class="fila">
+                    <div class="c3"><label>Telefono</label></div>
+                    {% if telf %}
+                    <div class="c7"><p>{{ telf }}</p></div>
+                    {% else %}
+                    <div class="c7"><p>--------------------------------------------------------------------------------------------------------</p></div>
+                    {% endif %}
+                </div>
+                <div class="fila">
+                    <div class="c3"><label>Estado</label></div>
+                    {% if estd %}
+                    <div class="c7"><p>{{ estd }}</p></div>
+                    {% else %}
+                    <div class="c7"><p>--------------------------------------------------------------------------------------------------------</p></div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="botones">
+                <div class="c4"><label>&nbsp;</label></div>
+                <div class="c8"><input type="button" value="Modificar proveedor" title="Click para modificar proveedor" id="modificarbutton" onclick="location.href='/modificarproveedor/';" /></div>
+                <div class="c8"><input type="button" value="Imprimir" title="Click para imprimir" id="imprimirbutton" onclick="window.print();" /></div>
+            </div>
+    <footer class="footer">
+        <div class="contatiner">
+   
+        </div>
+    </footer>
+</body>
+</html>

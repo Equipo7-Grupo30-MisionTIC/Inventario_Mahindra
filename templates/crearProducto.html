@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/estiloCrproducto.css') }}"/>
+    <title>Crear producto - Inventario Mahindra Mahindra</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container1">
+            <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="">
+        </div>
+        <div class="container2">
+            {% if titulo %}
+            <p class="textocentral">{{ titulo }} - Mahindra Mahindra</p>
+            {% else %}
+            <p class="textocentral">Mahindra Mahindra</p>
+            {% endif %}
+        </div>
+        <div class="container3">
+            {% if titulo %}
+            <img src="{{ url_for('static', filename='assets/avatar.png') }}" alt="" title="{{ titulo }}">
+            {% else %}
+            <img src="{{ url_for('static', filename='assets/avatar.png') }}" alt="" title="Mr">
+            {% endif %}
+        </div>
+        <div class="container4"></div>
+        <input class="btn" type="button" value="Salir" style='width:120px; height:40px' onclick="location.href='/productos/';"/>
+        </div>
+        </div>
+    </header>
+    <form name="frmeg" id="frmeg" method="POST" action="/crearproducto/" enctype="multipart/form-data">
+        <div class="box">
+            <div class="ppal">
+                <label class=titulo>Datos</label>
+                <div class="fila">
+                    <div class="c3"><label>{{ form.codprov.label }}</label></div>
+                    <div class="c7">{{ form.codprov()}}</div>
+                </div>
+                <div class="fila">
+                    <div class="c3"><label>&nbsp;</label></div>
+                    <div class="c7"><label style="font-size:small; text-align: center;">Solo aplica para productos con un solo proveedor. Si el producto tiene mas de un proveedor, dirigase a la pestaña "Proveedores", opcion "Crear" y registre el codigo del producto y la información individual de cada proveedor que lo proporciona. Si no tiene acceso a esta opcion, contactese con el administrador</label></div>
+                </div>
+                <div><label>&nbsp;</label></div>
+                <div><label>&nbsp;</label></div>
+                <div class="fila">
+                    <div class="c3"><label>{{ form.nomprod.label }}</label></div>
+                    <div class="c7">{{ form.nomprod() }}</div>
+                </div>
+                <div class="fila">
+                    <div class="c3"><label>{{ form.descr.label }}</label></div>
+                    <div class="c7">{{ form.descr(cols="90",rows="10")}}</textarea></div>
+                </div>
+                <div><label>&nbsp;</label></div>
+                <div><label>&nbsp;</label></div>
+                <div class="fila">
+                    <div class="c3"><label>{{ form.codunq.label }}</label></div>
+                    <div class="c7">{{ form.codunq() }}</div>
+                </div>
+                <div><label>&nbsp;</label></div>
+                <div><label>&nbsp;</label></div>                
+                <div class="fila">
+                    <div class="c3"><label>{{ form.cantmin.label }}</label></div>
+                    <div class="c7">{{ form.cantmin()}}</div>
+                </div>
+                <div><label>&nbsp;</label></div>
+                <div><label>&nbsp;</label></div>
+                <div class="fila">
+                    <div class="c3"><label> {{ form.cantdisp.label }}</label></div>
+                    <div class="c7">{{ form.cantdisp() }}</div>
+                </div>
+                <div><label>&nbsp;</label></div>
+                <div><label>&nbsp;</label></div>
+                <div class="c3"><label>{{ form.selectestd.label }}</label></div>
+                <div class="c7">{{ form.selectestd() }}</div>
+                <div><label>&nbsp;</label></div>
+                <div><label>&nbsp;</label></div>
+                <div class="fila">
+                    <div class="c3"><label> {{ form.adj.label }}</label></div>
+                    <div class="c7">{{ form.adj() }}</div>
+                </div>
+                <div class="fila">
+                    <div class="c3"><label>&nbsp;</label></div>
+                    <div class="c7"><label style="font-size:small; text-align: center;">Guarde la imagen con el codigo unico del producto y en formato jpg. Ejemplo, si el codigo del producto es "THX4567_123", la imagen debe guardarse como "THX4567_123.jpg".</label></div>
+                </div>
+            </div>
+            <div class="botones">
+                <div class="c4"><label>&nbsp;</label></div>
+                <div class="c8">{{ form.btncrear()}}</div>
+            </div>
+    </form>
+    <footer class="footer">
+        <div class="contatiner">
+        </div>
+    </footer>
+</body>
+</html>

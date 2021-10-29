@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/estiloDashboard.css') }}"/>
+    <title>Dashboard - Inventario Mahindra Mahindra</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container1">
+            <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="">
+        </div>
+        <div class="container2">
+            {% if titulo %}
+            <p class="textocentral">Bienvenido {{ titulo }} - Mahindra Mahindra</p>
+            {% else %}
+            <p class="textocentral">Mahindra Mahindra</p>
+            {% endif %}
+        </div>
+        <div class="container3">
+            {% if titulo %}
+            <img src="{{ url_for('static', filename='assets/avatar.png') }}" alt="" title="{{ titulo }}">
+            {% else %}
+            <img src="{{ url_for('static', filename='assets/avatar.png') }}" alt="" title="Mr">
+            {% endif %}
+        </div>
+        <div class="container4"></div>
+            <input class="btn" type="button" value="Cerrar sesión" style='width:120px; height:40px' onclick="location.href='/';"/>
+        </div>
+        </div>
+    </header>
+    <div class="caja1" style="border: 2px solid black;">
+        <img src="{{ url_for('static', filename='assets/avatar.png') }}" alt="">
+        {% if titulo %}
+        <p class="textocentral" style="text-align: center; font-weight: bold;"> {{ titulo }}</p>
+        {% else %}
+        <p class="textocentral" style="text-align: center; font-weight: bold;">Administrador</p>
+        {% endif %}
+        <i class="textocentral" style="text-align: center; float:center; padding-left: 67px;">Administrador</i>
+        <nav class="navigation">
+            <ul>
+             <li><a>MENÚ</a></li>
+            </br>
+             <li><a class="option" href="/dashboard/">Dashboard</a></li> 
+            </br>
+            <li><a class="option" href="/principal/">Principal</a></li>
+            </br>  
+             <li><a class="option" href="/usuarios/">Usuarios</a></li>
+            </br>
+             <li><a class="option" href="/productos/">Productos</a></li>
+            </br>
+             <li><a class="option" href="/proveedores/">&nbsp;&nbsp;Proveedores</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="caja2" style="border: 2px solid black;">
+        <div class="caja4" style="border: 2px solid purple;">
+                <img src="{{ url_for('static', filename='figures/new_plot.png') }}" alt="" style="margin-right:700px;">
+                <img class="img2" src="{{ url_for('static', filename='figures/second_plot.png') }}" alt="" style="margin-right:700px;">
+        </div>
+        <div class="caja5" style="border: 2px solid purple;">
+            <img class="img3" src="{{ url_for('static', filename='figures/third_plot.png') }}" alt="" style="margin-right:700px;">
+            <div class="texto"><p>El automovil {{auto_masvendido}} es el auto mas vendido actualmente (de un total actual vendido de {{total_actual}}). Detras de este le siguen los tipos que arriban se presentan.Los tipos no vendidos no se muestran en la gráfica</p>
+                                <p> Esta información se encuentra actualizada a:</p>
+                                <script>
+                                    var d = new Date();
+                                    document.write("Fecha: "+d.getDate(),"<br>Mes (0 al 11): "+d.getMonth(),"<br>Año:"+d.getFullYear(),"<br>Hora:"+d.getHours(),"&nbsp;Minutos: "+d.getMinutes(),"&nbsp;Segundos: "+d.getSeconds());
+                                    </script>
+            </div>
+        </div>
+    </div>
+           
+    <footer class="footer">
+        <div class="contatiner">
+        </div>
+    </footer>
+</body>
+</html>

@@ -37,23 +37,26 @@
            </nav>
         </div>
         <div class="container3">
-            <img src="{{ url_for('static', filename='assets/avatar.png') }}" alt="">
+            {% if titulo %}
+            <img src="{{ url_for('static', filename='assets/avatar.png') }}" alt="" title="{{ titulo }}">
+            {% else %}
+            <img src="{{ url_for('static', filename='assets/avatar.png') }}" alt="" title="Mr">
+            {% endif %}
+            {% if titulo %}
+            <p class="textocentral" style="text-align: center; font-size:xx-small;margin-top: 0px;"> {{ titulo }}</p>
+            {% else %}
+            <p class="textocentral" style="text-align: center;">Mr</p>
+             {% endif %}
         </div>
         <div class="container4"></div>
-            <input class="btn" type="button" value="Salir" style='width:120px; height:40px' onclick="location.href='/';"/>
+            <input class="btn" type="button" value="Cerrar sesión" style='width:120px; height:40px' onclick="location.href='/';"/>
         </div>
         </div>
     </header>
-    <div class="wrapper">
-        <div class="box">
-            <div class="ppal">
-                <h1 style="text-align: center;">BIENVENIDO AL INVENTARIO MAHINDRA MAHINDRA</h1>
-                <div class="fila">
-                    <div class="c3"><p>Nuestra marca ha revolucionado el mundo. Los automoviles Mahindra Mahindra son únicos en el mercado.</p></div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <video id="imgauto" autoplay muted loop><source src="{{ url_for('static', filename='videos/Background.mp4') }}" type="video/mp4"></video>
+    <video id="imgauto" autoplay muted loop><source src="{{ url_for('static', filename='videos/video2.mp4') }}" type="video/mp4"></video>
+    <img id="autoprincipal" src="{{ url_for('static', filename='assets/principal2.png') }}" alt="">
+    <img id="autoprincipal" src="{{ url_for('static', filename='assets/principal.png') }}" alt="">
     <footer class="footer">
         <div class="contatiner">
         </div>

@@ -14,55 +14,104 @@
             <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="">
         </div>
         <div class="container2">
-            <p class="textocentral">Usuario X - Mahindra Mahindra</p>
+            {% if titulo %}
+            <p class="textocentral">{{ titulo }} - Mahindra Mahindra</p>
+            {% else %}
+            <p class="textocentral">Mahindra Mahindra</p>
+            {% endif %}
         </div>
         <div class="container3">
-            <img src="{{ url_for('static', filename='assets/avatar.png') }}" alt="">
+            {% if titulo %}
+            <img src="{{ url_for('static', filename='assets/avatar.png') }}" alt="" title="{{ titulo }}">
+            {% else %}
+            <img src="{{ url_for('static', filename='assets/avatar.png') }}" alt="" title="Mr">
+            {% endif %}
         </div>
         <div class="container4"></div>
         <input class="btn" type="button" value="Salir" style='width:120px; height:40px' onclick="location.href='/principal/';"/>
         </div>
         </div>
     </header>
-    <div class="wrapper">
+    <form name="frusr" id="frusr" method="POST" action="/usuarios/">
         <div class="box">
             <div class="ppal">
                 <label class=titulo>Buscar</label>
                 <div class="fila">
-                    <div class="c12"><label>Número de documento</label></div>
-                    <div class="c14"><input type="text" id="numdocbus"/></div>
+                    <div class="c12"><label>{{ form.numdocusr.label }}</label></div>
+                    <div class="c14">{{ form.numdocusr()}}</div>
                 </div>
                 <div class="fila">
-                    <div class="c12"><label>Código de usuario</label></div>
-                    <div class="c14"><input type="text" id="codusu" /></div>
+                    <div class="c12"><label>{{ form.codusr.label }}</label></div>
+                    <div class="c14">{{ form.codusr()}}</div>
                 </div>
             </div>
             <div class="boton">
                 <div class="c4"><label>&nbsp;</label></div>
-                <div class="c8"><input type="button" value="Buscar" title="Click para buscar" id="buscarbutton" onclick="" /></div>
+                <div class="c8">{{ form.btnusr()}}</div>
             </div>
+    </form>
             <div class="ppal2">
                 <label class="titulo">Datos del usuario</label>
-                <div class="c10"><label class="refe">IMAGEN DE REFERENCIA</label></div>
+                {% if usr %}
+                <img id="imgusr" src="{{ url_for('static', filename='users/'+usr+'.jpg') }}" alt="">
+                {% else %}
+                <video id="imgusr" autoplay muted loop><source src="{{ url_for('static', filename='videos/uservideo.mp4') }}" type="video/mp4"></video>
+                {% endif %}
                 <div class="fila">
                     <div class="c3"><label>Nombre</label></div>
-                    <div class="c7"><p>---------------------------------------------------------------------------------------------------</p></div>
+                    {% if nom %}
+                    <div class="c7"><p>{{ nom }}</p></div>
+                    {% else %}
+                    <div class="c7"><p>-------------------------------------------------------------------------</p></div>
+                    {% endif %}
                 </div>
                 <div class="fila">
                     <div class="c3"><label>Número de documento</label></div>
-                    <div class="c7"><p>---------------------------------------------------------------------------------------------------</p></div>
+                    {% if numerodoc %}
+                    <div class="c7"><p>{{ numerodoc }}</p></div>
+                    {% else %}
+                    <div class="c7"><p>-------------------------------------------------------------------------</p></div>
+                    {% endif %}
                 </div>
                 <div class="fila">
                     <div class="c3"><label>Télefono</label></div>
-                    <div class="c7"><p>---------------------------------------------------------------------------------------------------</p></div>
+                    {% if telf %}
+                    <div class="c7"><p>{{ telf }}</p></div>
+                    {% else %}
+                    <div class="c7"><p>-------------------------------------------------------------------------</p></div>
+                    {% endif %}
                 </div>
                 <div class="fila">
-                    <div class="c3"><label>Código de usuario</label></div>
-                    <div class="c7"><p>---------------------------------------------------------------------------------------------------</p></div>
+                    <div class="c3"><label>Direccion</label></div>
+                    {% if direcc %}
+                    <div class="c7"><p>{{ direcc }}</p></div>
+                    {% else %}
+                    <div class="c7"><p>-------------------------------------------------------------------------</p></div>
+                    {% endif %}
+                </div>
+                <div class="fila">
+                    <div class="c3"><label>Usuario en sistema</label></div>
+                    {% if usr %}
+                    <div class="c7"><p>{{ usr }}</p></div>
+                    {% else %}
+                    <div class="c7"><p>-------------------------------------------------------------------------</p></div>
+                    {% endif %}
                 </div>
                 <div class="fila">
                     <div class="c3"><label>Rol</label></div>
-                    <div class="c7"><p>---------------------------------------------------------------------------------------------------</p></div>
+                    {% if rolusr %}
+                    <div class="c7"><p>{{ rolusr }}</p></div>
+                    {% else %}
+                    <div class="c7"><p>-------------------------------------------------------------------------</p></div>
+                    {% endif %}
+                </div>
+                <div class="fila">
+                    <div class="c3"><label>Estado</label></div>
+                    {% if estd %}
+                    <div class="c7"><p>{{ estd }}</p></div>
+                    {% else %}
+                    <div class="c7"><p>-------------------------------------------------------------------------</p></div>
+                    {% endif %}
                 </div>
             </div>
             <div class="botones">
@@ -70,8 +119,6 @@
                 <div class="c8"><input type="button" value="Crear nuevo usuario" title="Click para crear nuevo usuario" id="crearbutton" onclick="location.href='/crearusuario/';" /></div>
                 <div class="c8"><input type="button" value="Modificar usuario" title="Click para modificar el actual" id="modificarbutton" onclick="location.href='/modificarusuario/';" /></div>
             </div>
-    </div>
-
     <footer class="footer">
         <div class="contatiner">
    

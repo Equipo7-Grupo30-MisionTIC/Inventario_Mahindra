@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/miEstilo.css') }}"/>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/validacion.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/estiloCrusuario.css') }}"/>
     <title>Crear usuario - Inventario Mahindra Mahindra</title>
 </head>
 <body>
@@ -14,65 +14,88 @@
             <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="">
         </div>
         <div class="container2">
-            <p class="textocentral">Usuario X - Mahindra Mahindra</p>
+            {% if titulo %}
+            <p class="textocentral">{{ titulo }} - Mahindra Mahindra</p>
+            {% else %}
+            <p class="textocentral">Mahindra Mahindra</p>
+            {% endif %}
         </div>
         <div class="container3">
-            <img src="{{ url_for('static', filename='assets/avatar.png') }}" alt="">
+            {% if titulo %}
+            <img src="{{ url_for('static', filename='assets/avatar.png') }}" alt="" title="{{ titulo }}">
+            {% else %}
+            <img src="{{ url_for('static', filename='assets/avatar.png') }}" alt="" title="Mr">
+            {% endif %}
         </div>
         <div class="container4"></div>
         <input class="btn" type="button" value="Salir" style='width:120px; height:40px' onclick="location.href='/usuarios/';"/>
         </div>
         </div>
     </header>
-    <form name="frmeg" id="frmeg" method="POST" action="/crearusuario/">
+    <form name="frmeg" id="frmeg" method="POST" action="/crearusuario/" enctype="multipart/form-data">
         <div class="box">
             <div class="ppal">
                 <label class=titulo>Registrar nuevo usuario</label>
                 <div class="fila">
-                    <div class="c3"><label>Nombre</label></div>
-                    <div class="c7"><input type="text" id="usrtext" name="nomtxt" required/></div>
+                    <div class="c3"><label>{{ form.nom.label }}</label></div>
+                    <div class="c7">{{ form.nom()}}</div>
                 </div>
                 <div class="fila">
-                    <div class="c3"><label>Número de documento</label></div>
-                    <div class="c7"><input type="text" id="pwdtext" name="numdoctxt" required/></div>
+                    <div class="c3"><label>{{ form.numdoc.label }}</label></div>
+                    <div class="c7">{{ form.numdoc()}}</div>
                 </div>
                 <div class="fila">
-                    <div class="c3"><label>Télefono</label></div>
-                    <div class="c7"><input type="text" id="nuetext" name="telftxt"/></div>
+                    <div class="c3"><label>{{ form.direcc.label }}</label></div>
+                    <div class="c7">{{ form.direcc()}}</div>
                 </div>
                 <div class="fila">
-                    <div class="c3"><label>Código de usuario</label></div>
-                    <div class="c7"><input type="text" id="vertext" name="codusrtxt" required/></div>
+                    <div class="c3"><label>{{ form.telf.label }}</label></div>
+                    <div class="c7">{{ form.telf(minlenght=10, maxlength=10)}}</div>
+                </div>
+                <div class="fila">
+                    <div class="c3"><label>{{ form.codusr.label }}</label></div>
+                    <div class="c7">{{ form.codusr(size=40, minlenght=5, maxlength=40)  }}</div>
+                </div>
+                <div class="fila">
+                    <div class="c3"><label>&nbsp;</label></div>
+                    <div class="c7"><label style="font-size:small; text-align: center;">El nombre de usuario puede contener letras (a-z), números (0-9) y puntos (.). Debe tener mínimo 5 caracteres, máximo 40. Puede usar mayúsculas y minúsculas. Puede agregar números del 0 al 9. Los nombres de usuario pueden comenzar o terminar con puntos (.), guiones (-), guiones bajos (_). Ningún otro carácter esta permitido.</label></div>
                 </div>
                 <div><label>&nbsp;</label></div>
                 <div><label>&nbsp;</label></div>
-                <div class="c3"><label>Rol</label></div>
-                <div class="c7">
-                    <select class="c7">
-                      <option value="0">Select:</option>
-                      <option value="1">Empleado</option>
-                      <option value="2">Administrador</option>
-                    </select>
-                  </div>
+                <div><label>&nbsp;</label></div>
+                <div class="c3"><label>{{ form.selct1.label }}</label></div>
+                <div class="c7"><label>{{ form.selct1() }}</label></div>
+                <div><label>&nbsp;</label></div>
+                <div><label>&nbsp;</label></div>
+                <div><label>&nbsp;</label></div>
+                <div class="c3"><label>{{ form.selct2.label }}</label></div>
+                <div class="c7"><label>{{ form.selct2() }}</label></div>
+                <div><label>&nbsp;</label></div>
+                <div><label>&nbsp;</label></div>
+                <div class="fila">
+                    <div class="c3"><label> {{ form.adj1.label }}</label></div>
+                    <div class="c7">{{ form.adj1() }}</div>
+                </div>
+                <div class="fila">
+                    <div class="c3"><label>&nbsp;</label></div>
+                    <div class="c7"><label style="font-size:small; text-align: center;">Guarde la imagen con el nombre de usuario asignado y en formato jpg. Ejemplo, si el nombre de usuario seleccionado es "Agutierrez12", la imagen debe guardarse como "Agutierrez12.jpg".</label></div>
+                </div>
             </div>
             <div class="ppal2">
                 <label class=titulo>Cifrar contraseña</label>
                 <div class="fila">
-                    <div class="c3"><label>Contraseña a asignar</label></div>
-                    <div class="c7"><input type="password" id="asignclave" name="psstxt" required/></div>
+                    <div class="c3"><label>{{ form.pwda.label }}</label></div>
+                    <div class="c7">{{ form.pwda(size=40, minlenght=8, maxlength=40) }}</div>
                 </div>
-            </div>
-            <div class="ppal3">
                 <div class="fila">
-                    <div class="c9" id="cbx"><input type="checkbox" id="checkb" name="chk" /></div>
-                    <div class="c10" id="cbl"><label>CheckBox</label></div>
-                    <img src="{{ url_for('static', filename='assets/catcha.png') }}" alt="">
+                    <div class="c3"><label>&nbsp;</label></div>
+                    <div class="c7"><label style="font-size:small; text-align: center;">La contraseña puede contener letras (a-z) y números (0-9). Debe tener mínimo 8 caracteres, máximo 40. Mínimo debe contener un carácter en (1) mayúsculas y uno (1) en minúsculas. Mínimo debe contener un número del 0 al 9. La contraseña puede comenzar o contener un guion bajo (_) solamente. Ningún otro carácter está permitido.</label></div>
                 </div>
             </div>
             <div class="botones">
                 <div class="c4"><label>&nbsp;</label></div>
-                <div class="c8"><input type="button" value="Crear" title="Click para crear usuario" id="crearbutton"/></div>
-                <div class="c8"><input type="button" value="Deshacer" title="Click para deshacer" id="deshacerbutton"></div>
+                <div class="c8">{{ form.btnusr()}}</div>
+                <div class="c8"><input type="button" value="Deshacer" title="Click para deshacer" id="deshacerbutton" onclick="location.href='/usuarios/';"></div>
             </div>
     </form>
     <footer class="footer">
@@ -81,3 +104,4 @@
     </footer>
 </body>
 </html>
+

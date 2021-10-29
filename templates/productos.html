@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/estiloProductos.css') }}" />
+    <title>Productos - Inventario Mahindra Mahindra</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container1">
+            <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="">
+        </div>
+        <div class="container2">
+            {% if titulo %}
+            <p class="textocentral">{{ titulo }} - Mahindra Mahindra</p>
+            {% else %}
+            <p class="textocentral">Mahindra Mahindra</p>
+            {% endif %}
+        </div>
+        </div>
+        <div class="container3">
+            {% if titulo %}
+            <img src="{{ url_for('static', filename='assets/avatar.png') }}" alt="" title="{{ titulo }}">
+            {% else %}
+            <img src="{{ url_for('static', filename='assets/avatar.png') }}" alt="" title="Mr">
+            {% endif %}
+        </div>
+        <div class="container4"></div>
+        <input class="btn" type="button" value="Salir" style='width:120px; height:40px' onclick="location.href='/principal/';"/>
+        </div>
+        </div></br>
+    </header>
+    <header class="header2">
+        <nav class="navigation">
+            <ul>
+             <li><a class="option" href="/productos/">Principal</a></li> 
+             <li><a>&nbsp;</a></li>
+             <li><a>&nbsp;</a></li>
+             <li><a>&nbsp;</a></li>
+             <li><a class="option" href="/crearproducto/">Crear</a></li> 
+             <li><a>&nbsp;</a></li>
+             <li><a>&nbsp;</a></li>
+             <li><a>&nbsp;</a></li>
+             <li><div class="dropdown">
+                <button class="dropbtn">Ver opciones
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="/productos_lista_proveedores/">Generar datos de proveedores</a>
+                    <a href="/productos_alerta_cantminima/">Generar lista de productos debajo de la cantidad minima</a>
+                </div>
+                </div></li> 
+            </ul>
+        </nav>
+    </header>
+    <form name="frmeg" id="frmeg" method="POST" action="/productos/">
+        <div class="box">
+            <div class="ppal">
+                <label class=titulo>Buscar</label>
+                <div class="fila">
+                    <div class="c12"><label>{{ form.codprobs.label }}</label></div>
+                    <div class="c14">{{ form.codprobs()}}</div>
+                </div>
+            </div>
+            <div class="boton">
+                <div class="c4"><label>&nbsp;</label></div>
+                <div class="c8">{{ form.btnbusc()}}</div>
+            </div>
+        </form>
+            <div class="ppal2">
+                <label class="titulo">Datos del producto</label>
+                {% if codigo %}
+                <img id="imgauto" src="{{ url_for('static', filename='uploads/'+codigo+'.jpg') }}" alt="">
+                {% else %}
+                <video id="imgauto" autoplay muted loop><source src="{{ url_for('static', filename='videos/Intro.mp4') }}" type="video/mp4"></video>
+                {% endif %}
+                <div class="fila">
+                    <div class="c3"><label>Codigo de producto</label></div>
+                    {% if codigo %}
+                    <div class="c7"><p>{{ codigo }}</p></div>
+                    {% else %}
+                    <div class="c7"><p>-------------------------------------------------------------------------</p></div>
+                    {% endif %}
+                </div>
+                <div class="fila">
+                    <div class="c3"><label>Nombre producto</label></div>
+                    {% if nomprod %}
+                    <div class="c7"><p>{{ nomprod }}</p></div>
+                    {% else %}
+                    <div class="c7"><p>--------------------------------------------------------------------------</p></div>
+                    {% endif %}
+                </div>
+                <div class="fila">
+                    <div class="c3"><label>Descripcion</label></div>
+                    {% if descripcion %}
+                    <div class="c7"><p>{{ descripcion }}</p></div>
+                    {% else %}
+                    <div class="c7"><p>-------------------------------------------------------------------------</p></div>
+                    {% endif %}
+                </div>
+                <div class="fila">
+                    <div class="c3"><label>Cantidad disponible</label></div>
+                    {% if cantdis %}
+                    <div class="c7"><p>{{ cantdis }}</p></div>
+                    {% else %}
+                    <div class="c7"><p>-------------------------------------------------------------------------</p></div>
+                    {% endif %}
+                </div>
+                <div class="fila">
+                    <div class="c3"><label>Proveedor(es)</label></div>
+                    {% if prov %}
+                    <div class="c7"><p>{{ prov }}</p></div>
+                    {% else %}
+                    <div class="c7"><p>-------------------------------------------------------------------------</p></div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="botones">
+                <div class="c4"><label>&nbsp;</label></div>
+                <div class="c8"><input type="button" value="Modificar producto" title="Click para crear editar producto" id="modificarbutton" onclick="location.href='/modificarproducto/';" /></div>
+                <div class="c8"><input type="button" value="Producto adquirido" title="Click para confirmar adquisición de producto" id="adquiridobutton" onclick="location.href='/transaccion/';" /></div>
+            </div>
+    <footer class="footer">
+        <div class="contatiner">
+   
+        </div>
+    </footer>
+</body>
+</html>

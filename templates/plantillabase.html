@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/indexEstilo.css') }}"/>
+    {% if titulo %}
+    <title>{{ titulo }} - Inventario Mahindra Mahindra</title>
+    {% else %}
+    <title>Inventario Mahindra Mahindra</title>
+    {% endif %}
+</head>
+<body>
+    <header class="header">
+        <div class="container1">
+            <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="">
+        </div>
+        <div class="container2">
+            <p class="textocentral">Mahindra Mahindra</p>
+        </div>
+        <div class="container3">
+        </div>
+        <div class="container4"></div>
+        </div>
+        </div>
+    </header>
+    {% block cuerpo %}{% endblock %}
+    {% for msg in get_flashed_messages()  %}
+    <div class="fila">{{ msg }}</div>
+    {% endfor %}
+</body>
+</html>

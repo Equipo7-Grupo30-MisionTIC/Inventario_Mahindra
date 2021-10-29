@@ -1,11 +1,11 @@
 body{
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Helvetica, Arial, sans-serif;
     margin: 20px;
 }
 
 .header{
-    background: lightgray;
-    color:black;
+    background:#252525;
+    color:white;
     padding: 0 5%;
     width: 100%;
     position: fixed;
@@ -21,7 +21,7 @@ body{
     height: auto;
     float: left;
     margin-left:5px;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .container1 img{
@@ -191,5 +191,5 @@ body{
      background: lightgray;
  }
  input[type=button]:hover{
-     background: lightblue;
- }
+    background: #E0B0FF;
+}

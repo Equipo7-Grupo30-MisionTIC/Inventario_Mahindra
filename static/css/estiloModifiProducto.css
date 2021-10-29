@@ -1,0 +1,247 @@
+body{
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 20px;
+}
+
+.header{
+    background:#252525;
+    color:white;
+    padding: 0 5%;
+    width: 100%;
+    position: fixed;
+    top:0;
+    left: 0;
+    bottom: 3;
+    display: flex;
+
+}
+
+.container1{
+    min-width: 10%;
+    height: auto;
+    float: left;
+    margin-left:5px;
+    margin-top: 5px;
+}
+
+.container1 img{
+    min-width: 50px;
+    width: 50px;
+    height: auto;
+    float: left;
+}
+.container2{
+    width: 65%;
+    height: auto;
+    float: left;
+    margin-left:5px;
+    margin-top: 0px;
+}
+.container2 p{
+    font-weight: bold;
+    text-align: center;
+    font-size: 120%;
+}
+
+.container3{
+    min-width: 5%;
+    width: 5%;
+    float:left;
+    margin-left:5px;
+    margin-top: 5px;
+}
+.container3 img{
+    min-width: 50px;
+    width: 50px;
+    margin: auto;
+    display: block;
+    margin-bottom:5px;
+}
+
+.container4{
+    min-width:1%;
+    height: 20%;
+    width: 1%;
+    float:left;
+    margin-left:5px;
+    margin-top: 5px;
+
+}
+
+.btn{
+    width: 60px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin-top:10px
+
+}
+
+.box {
+    margin-top: 80px;
+    min-height: 150px;
+    height: 720px;
+    width: auto;
+  }
+
+  .ppal{
+    border: 2px solid black;
+    margin-top: 10px;
+    margin-left: 210px;
+    margin-right: 210px;
+    min-height: 100px;
+    height: 830px;
+    width: auto;
+
+ }
+
+
+ .ppal .titulo{
+     font-weight: bold;
+     margin-left: 10px;
+     margin-right: 10px;
+     margin-top: 5px;
+ }
+
+ .fila {
+     height: 35px;
+     margin-top: 30px;
+ }
+
+
+ .c3{
+     width: 230px;
+     display: inline;
+     float: left;
+     overflow-x: hidden;
+     margin-left: 85px;
+     margin-right: 5px;
+     text-align: left;
+     font-family: sans-serif;
+     font-size: small;
+ }
+ #selestadoprod{
+    width: 100%;
+     display: inline;
+     float: left;
+     margin-left: 2px;
+     margin-right: 2px;
+     text-align: center;
+ }
+
+#cbx{
+    width: 20%;
+    margin-left: 5px;
+    margin-right: 5px;
+    position: absolute;
+    left: 300px;
+    right:    1000px;
+    bottom:   30px;
+}
+
+#cbl{
+    width: 20%;
+    margin-left: 5px;
+    margin-right: 5px;
+    position: absolute;
+    right:    550px;
+    bottom:   30px;
+}
+
+ .c8{
+    width: 30%;
+    display: inline;
+    float: left;
+    overflow-x: hidden;
+ }
+ .c3 label{
+     font-weight: bold;
+     margin-right: 20px;
+ }
+ .c4{
+     width: 40%;
+     display: inline;
+     float: left;
+     overflow-x: hidden;
+ }
+ .c7{
+     width: 60%;
+     display: inline;
+     float: left;
+     margin-left: 2px;
+     margin-right: 2px;
+     text-align: center;
+ }
+
+ #cantmin{
+    width: 60%;
+    display: inline;
+    float: center;
+    margin-left: 2px;
+    margin-right: 2px;
+    text-align: center;
+ }
+
+ #cantdisp{
+    width: 60%;
+    display: inline;
+    float: center;
+    margin-left: 2px;
+    margin-right: 2px;
+    text-align: center;
+ }
+
+ input[type=text], input[type=password]{
+     width: 100%;
+ }
+
+ #usrtxt {
+     text-transform: uppercase;
+ }
+
+ .botones{
+    height: 35px;
+    margin-top: 30px;
+    position: relative;
+ }
+
+ #btneliminar{
+    position: absolute;
+    right:    300px;
+    bottom:   20px;
+    width: 300px;
+ }
+
+ #btneliminar:hover{
+    background: #E0B0FF;
+}
+ #btneditar{
+    position: absolute;
+    right:    1000px;
+    bottom:   20px;
+    width: 300px;
+ }
+
+ #btneditar:hover{
+    background: #E0B0FF;
+}
+
+ input[type=button]{
+     border-color:black;
+     border-width: 1px;
+     border-radius: 4px;
+     color: black;
+     font-weight: bold;
+     cursor: pointer;
+     font-size: 14;
+     height: 40px;
+     text-align: center !important;
+     background: lightgray;
+ }
+ input[type=button]:hover{
+    background: #E0B0FF;
+}
+
+
