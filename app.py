@@ -788,8 +788,6 @@ def modif_proveedor():
                 return """<script>var r = confirm("ERROR: Por favor reintente.Si ha verificado que los datos son validos y esta intentado eliminar el codigo unico de proveedor, puede que no sea posible por su relación con otros registros de la base de datos. Dado esto, considere editar los registros relacionados.");if (r == true) {window.history.go(-1);} else {window.history.go(-1);}</script>"""
         return render_template("modificarProveedor.html", form=frm, titulo=usu)
 
-if __name__ == '__main__':
-    app.run()
 
 
 
