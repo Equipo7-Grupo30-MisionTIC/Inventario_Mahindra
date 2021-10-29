@@ -1,21 +1,15 @@
 from flask_wtf import FlaskForm
 from flask_wtf.recaptcha import validators
-from wtforms import PasswordField, TextField, SubmitField, FileField, DecimalField, TextAreaField, IntegerField, SelectField
+from wtforms import PasswordField, TextField, SubmitField, FileField, TextAreaField, IntegerField, SelectField
 from flask_wtf.file import FileField
 from wtforms.fields.simple import TextAreaField
-from wtforms.validators import EqualTo, InputRequired
+from wtforms.validators import InputRequired
 
 
 class Login(FlaskForm):
     usr= TextField("Usuario *", validators=[InputRequired(message="El campo usuario es requerido")])
     pwd= PasswordField ("Clave *", validators=[InputRequired(message="El campo Clave es requerido")])
     btn= SubmitField("Login")
-
-class CClave(FlaskForm):
-    act= PasswordField("Clave actual *", validators=[InputRequired(message="El campo Clave es requerido")])
-    nue= PasswordField ("Nueva clave *", validators=[InputRequired(message="El campo Nueva Clave es requerido")])
-    ver= PasswordField ("Nueva clave *", validators=[InputRequired(message="La verificación de Clave es requerida"), EqualTo(nue, message="La nueva clave y su verificación no coinciden")])
-    btnc= SubmitField("Cambiar")
     
 class Registro(FlaskForm):
     nom= TextField("Nombre *", validators=[InputRequired(message="El campo usuario es requerido")])

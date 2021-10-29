@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, session, flash, request, jsonify
+from flask import Flask, render_template, redirect, session, request, jsonify
 from markupsafe import escape
 import os
 from os import remove
@@ -7,9 +7,9 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from werkzeug.utils import secure_filename
-from security import login_valido, pass_valido, email_valido
+from security import login_valido, pass_valido
 from connect_db import consulta_acc, consulta_sel
-from formularios import Login, CClave, ModificarProveedor, ModificarUsuario, Registro, CrearProducto, BuscarProducto, BuscarUsuario, ModificarProducto, BuscarProveedor, RegistroProveedor
+from formularios import Login, ModificarProveedor, ModificarUsuario, Registro, CrearProducto, BuscarProducto, BuscarUsuario, ModificarProducto, BuscarProveedor, RegistroProveedor
 from werkzeug.security import check_password_hash, generate_password_hash
 
 
